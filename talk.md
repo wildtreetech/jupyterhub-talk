@@ -294,6 +294,8 @@ Tim Head
 tim@wildtreetech.com
 
 Science, code, and people.
+
+Slides: https://github.com/wildtreetech/jupyterhub-talk
 ]
 
 <br />
