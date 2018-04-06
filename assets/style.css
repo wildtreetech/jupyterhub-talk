@@ -258,6 +258,18 @@ td {
     display: inline-block;
 }
 
+.final-slide:after {
+    content: '';
+    background: url("../assets/logo_wtt.png") no-repeat;
+    background-size: 100% 100%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 2em;
+    right: 3.3em;
+    display: inline-block;
+}
+
 .title-slide {
     vertical-align: middle;
 }

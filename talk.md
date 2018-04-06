@@ -30,7 +30,7 @@ JupyterHub means that there is no need to waste time on setup.
 
 .center.width-90[![](img/marvin-meyer-571072-unsplash.jpg)]
 
-Using JupyterHub means that all work is in a central place, shared, and backed up.
+Everyone has their own computer, USB drives, coffee and tea ...
 
 ???
 
@@ -55,11 +55,15 @@ etc. Sharing, backups, etc is hard. Limited to laptop's compute power.
 
 .center.width-100[![](img/notebook.png)]
 
+???
+
+Using JupyterHub means that all work is in a central place, shared, and backed up.
+
 ---
 
-# No laptops
+# Laptop Zero 😄
 
-All you need is a browser, centralised access to data, compute, software.
+All you need is a browser, centralised access to: data, compute, and software.
 
 .center.width-90[![](img/aaron-burden-329406-unsplash.jpg)]
 
@@ -204,6 +208,51 @@ class LocalProcessSpawner:
 
 ---
 
+# Sketch of a Local Process Spawner
+
+```
+class LocalProcessSpawner:
+    async def poll(self):
+        """Poll the spawned process to see if it is still running."""
+        # if we started the process, poll with Popen
+        if self.proc is not None:
+            status = self.proc.poll()
+            if status is not None:
+                # clear state if the process is done
+                self.clear_state()
+            return status
+
+        # send signal 0 to check if PID exists
+        # this doesn't work on Windows, but that's okay because we don't support Windows.
+        alive = await self._signal(0)
+        if not alive:
+            self.clear_state()
+            return 0
+        else:
+            return None
+```
+
+---
+
+# Sketch of a Local Process Spawner
+
+```
+class LocalProcessSpawner:
+    async def stop(self):
+    """Stop the single-user server process for the current user.
+
+    The coroutine should return when the process is no longer running.
+    """
+    status = await self.poll()
+    if status is not None:
+        return
+    self.log.debug("Interrupting %i", self.pid)
+    await self._signal(signal.SIGINT)
+    await self.wait_for_death(self.interrupt_timeout)
+```
+
+---
+
 # Customise user's environment
 
 A spawner can modify the environment of a user's server. For example inject
@@ -253,7 +302,7 @@ The Full Monty: https://zero-to-jupyterhub.readthedocs.io/en/latest/
 
 ---
 
-# Demo
+# Demos
 
 * Starting JupyterHub locally
     * Admin panel
@@ -284,7 +333,7 @@ class: middle, center
 
 ---
 
-class: middle
+class: middle, final-slide
 
 .center[
 # Questions !??
@@ -305,3 +354,9 @@ Talk to me about:
 * setting up JupyterHub
 * data-science consulting
 * in-house training
+
+.footnote[
+Tim Head, Wild Tree Tech, April 2018
+]
+
+---
