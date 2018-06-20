@@ -105,11 +105,6 @@ a:hover {
     text-decoration: underline;
 }
 
-em {
-    color: #ffab40;
-    font-style: normal;
-}
-
 strong {
     color: #d11a01;
     font-style: normal;
@@ -177,6 +172,23 @@ td {
     margin-left: 1em;
 }
 
+.left-column {
+  width: 50%;
+  float: left;
+}
+.reset-column {
+  overflow: auto;
+  width: 100%;
+}
+.right-column {
+  width: 50%;
+  float: right;
+}
+
+.border {
+  border: 2px solid black;
+}
+
 .gallery {
     display: block;
     text-align: center;
@@ -185,6 +197,7 @@ td {
 .gallery img {
     width: 200px;
     height: auto;
+    padding: 25px;
 }
 
 .caption {
