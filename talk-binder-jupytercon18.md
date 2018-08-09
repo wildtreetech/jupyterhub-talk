@@ -3,13 +3,7 @@ class: middle, center, title-slide
 # Binder
 
 
-.footnote[Tim Head, Wild Tree Tech, JupyterCon 2018]
-
----
-
-# Demo
-
-Because why not?
+.footnote[Tim Head for the Binder team, Wild Tree Tech, JupyterCon 2018]
 
 ---
 
@@ -94,7 +88,6 @@ You have discussions like:
 **B:** Make sure to install the latest beta, current release is a bit flakey.
 
 ---
-
 # The Corporate IT Lockdown Model
 
 Your IT department tightly controls what can be installed, there are
@@ -117,6 +110,7 @@ approved tools that you shall use.
 * The computational tools to solve a problem
 * A way to pack it all so others can use it
 * A way to communicate and share our work
+* A way to only depend on tools everyone has (browsers!)
 * A way to do all of this relatively easily and accessibly
 
 ---
@@ -238,17 +232,15 @@ Supported configuration files:
 Hi Tim,
 
 thanks for helping out on our project. To run things
-you need to install Docker and then
+you need to install Docker, repo2docker and then run
 
-`pip install repo2docker`.
+repo2docker https://github.com/norvig/pytudes/
 
-You need to run it with the URL of the GitHub repo
-and it will automatically build a docker image for
-you, then launch it. It produces a lot of output but
-at the end there is a URL that you need to paste into
-your browser. It will show a Jupyter notebook.
+It produces a lot of output but at the end there is
+a URL that you need to paste into your browser. That
+will show a Jupyter notebook.
 
-Let me know how it goes,
+Tina
 ```
 
 .larger[
@@ -277,7 +269,7 @@ class: middle, center
 
 .center[
 
-.width-20[![](img/jupyterhub-logo.png)]
+.width-40[![](img/jupyterhub-logo-trimmed.png)]
 
 .larger[+
 
@@ -323,37 +315,46 @@ https://github.com/binder-examples/r
 
 .center.border.width-100[![](img/rstudio-demo.gif)]
 
+Bokeh app https://github.com/binder-examples/bokeh
+
 ---
 
-# Who is building this?
+# Part Of The Community!
 
-* shout out to all the contributors!
-  * super hard to find a picture or a list because we are spread over several repositories
+.center.border.width-100[![](img/jhub-contributors.png)]
+
+* and many more who aren't captured in GitHub history
 * Join us at https://github.com/jupyterhub/binder
 * Chat with us https://gitter.im/jupyterhub/binder
-* Become part of the community:
-    * use binder and the tools around it,
-    * help explain binder to people,
-    * follow our tutorials (and then help us improve them)
-    * help maintaining the code,
-    * take part in the operations,
-    * create your own with the zero2binder guide!
+* Become part of the community!
 
 ---
 
 # Around the world in 80 days
 
-[Users from all around the globe](https://analytics.google.com/analytics/web/#/report/visitors-geo/a101904940w149250546p154152886)
+.center.width-90.border[![](img/analytics-users-80days.png)]
 
-.center.width-100.border[![](img/binder-map-of-users.png)]
+In the last 80 days we have had users from all but eight countries on Earth. Cuba, North Korea, Chad, Central African Republic, Western Sahara, Mali, Guinea-Bissau, Eritrea. (Is Spitzbergen a country?)
 
 ---
 
-# What about libraries?
+# A Selection of users
+
+https://github.com/wichit2s/programmingfundamentals/ - University course in Thailand
+
+https://github.com/AndeanROAD/PythonISYA - Andean Regional Office of Astronomy for Development
+
+https://github.com/Coleridge-Initiative - http://coleridgeinitiative.org/
+
+https://github.com/fboylu/binder - Microsoft internal training event, you've made it when MS asks for your help right?
+
+---
+
+# Back to libraries
 
 Libraries have always been about curating and spreading knowledge!
 
-First they collected clay tablets, then books, then they managed access to PDFs, next ...
+First libraries archived clay tablets, then books, followed by managing access to PDFs, next ...
 
 --
 .larger[
@@ -365,7 +366,7 @@ First they collected clay tablets, then books, then they managed access to PDFs,
 
 Combines the stability and scalability of JupyterHub with ondemand image building.
 
-Anyone who wants can now make their computational project "one click" reproducible: [![Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/AllenDowney/ThinkDSP/master?filepath=code/cacophony.ipynb)
+Anyone who wants to can now make their computational project "one click" reproducible: [![Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/AllenDowney/ThinkDSP/master?filepath=code/cacophony.ipynb)
 
 Based on state of the art cloud orchestration tools.
 
@@ -373,11 +374,11 @@ Can be deployed by anyone: https://binderhub.readthedocs.io/en/latest/
 
 ---
 
+---
+
 class: middle, center
 
 # Encore
-
-now we start the exciting part
 
 ---
 
@@ -389,13 +390,24 @@ Can you (this room) move the needle on the number of live binders?
 Visit http://bit.ly/2t9Bjql to launch your first binder.
 ]
 
-<iframe src="https://grafana.mybinder.org/d-solo/fZWsQmnmz/pod-activity?refresh=30s&orgId=1&panelId=3" width="100%" height="300" frameborder="0"></iframe>
+https://grafana.mybinder.org/d-solo/fZWsQmnmz/pod-activity?refresh=30s&orgId=1&panelId=3
 
 ---
 
 # Interactive documentation
 
 https://spacy.io/usage/linguistic-features#pos-tagging
+
+<div class="container">
+<pre data-executable>print('Hello world!')</pre>
+<script type="text/javascript">
+      console.log("hello world");
+      new Juniper({
+          repo: 'ines/spacy-io-binder'
+      });
+</script>
+
+</div>
 
 .center.width-50[![](img/juniper.png)]
 
