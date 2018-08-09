@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Juniper Demo</title>
+        <meta charset="utf-8">
+        <!-- some CodeMirror themes -->
+        <link rel="stylesheet" href="https://codemirror.net/theme/monokai.css" />
+        <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/316871/summerfruit.css" />
+        <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/316871/fairyfloss.css" />
+        <!-- demo styles -->
+        <style>
+            .container { max-width: 600px; margin: 5rem auto; }
+            .container > * { margin-bottom: 4rem; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+
+<pre data-executable>
+print('This is a demo of Juniper.')
+print('Hello JupyterCon!')
+</pre>
+
+<pre data-executable data-theme="fairyfloss">
+# because it's a Jupyter environment, you can
+# use the built-in IPython functions
+
+from IPython.core.display import display, HTML
+html = "&lt;img src='https://i.imgur.com/A2g43BD.jpg'/&gt;"
+display(HTML(html))
+
+# you can also just output stuff
+def some_function(some_arg):
+    return some_arg
+
+some_function([1, 2, 3, 4])
+</pre>
+
+Visit <a href="https://github.com/ines/juniper">https://github.com/ines/juniper</a> for more!
+
+        </div>
+
+        <script src="assets/juniper.min.js"></script>
+        <script>
+            new Juniper({
+                repo: 'ines/spacy-io-binder'
+            });
+
+            // listen to status updates
+            document.addEventListener('juniper', ev =>
+                console.log('Status:', ev.detail.status))
+        </script>
+
+    </body>
+</html>

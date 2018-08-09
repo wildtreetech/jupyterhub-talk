@@ -21,7 +21,7 @@ Earliest libraries were archives of clay tablets. Appeared in Mesopotamia about 
 
 # Libraries
 
-https://unsplash.com/photos/gFrhMONDf9o
+.center.width-100[![](img/j-zamora-267753-unsplash.jpg)]
 
 ???
 
@@ -31,12 +31,22 @@ Things have changed a bit since then. We invented paper and the printing press. 
 
 # Libraries
 
-https://unsplash.com/photos/PkbZahEG2Ng
-https://unsplash.com/photos/ljp-ewA23lc
+.center.width-100[![](img/tobias-fischer-185901-unsplash.jpg)]
 
 ???
 
 Modern libraries are modern!
+
+---
+
+# Libraries?
+
+.center.width-80[![](img/higgs-discovery.png)]
+
+???
+
+But you hardly ever go there anymore, these days a large part of their work
+is to broker access to digital information.
 
 ---
 
@@ -56,6 +66,14 @@ WaveLab and Reproducible Research, 1995_
 
 ???
 Needs a picture. Illustrate point that information is now in computers and code, not paper or PDF anymore.
+
+---
+
+<blank>
+
+???
+
+This means that producing information is basically free now, but successfully consuming it has never been harder. It is very likely that computer programs played a role in generating that information, so you need
 
 ---
 
@@ -342,6 +360,8 @@ In the last 80 days we have had users from all but eight countries on Earth. Cub
 
 https://github.com/wichit2s/programmingfundamentals/ - University course in Thailand
 
+https://github.com/msereiko/coding_workshop - NYC coding for students
+
 https://github.com/AndeanROAD/PythonISYA - Andean Regional Office of Astronomy for Development
 
 https://github.com/Coleridge-Initiative - http://coleridgeinitiative.org/
@@ -382,6 +402,18 @@ class: middle, center
 
 ---
 
+# Not Just Jupyter
+
+BinderHub also works with RStudio or Shiny.
+
+https://github.com/binder-examples/r
+
+You can also use a tool like OpenRefine
+
+https://github.com/betatim/openrefineder/
+
+---
+
 # Challenge
 
 Can you (this room) move the needle on the number of live binders?
@@ -394,22 +426,31 @@ https://grafana.mybinder.org/d-solo/fZWsQmnmz/pod-activity?refresh=30s&orgId=1&p
 
 ---
 
+# Slides about Binder using Binder
+
+You can embed code in your HTML, and with a bit of JavaScript magic
+make it executable, powered by a BinderHub.
+
+<pre data-executable="true" data-language="python">%matplotlib inline
+import numpy as np
+import matplotlib.pyplot as plt
+x = np.linspace(0,10)
+plt.plot(x, np.sin(x))
+plt.plot(x, np.cos(x))
+</pre>
+
+---
+
 # Interactive documentation
 
-https://spacy.io/usage/linguistic-features#pos-tagging
-
-<div class="container">
-<pre data-executable>print('Hello world!')</pre>
-<script type="text/javascript">
-      console.log("hello world");
-      new Juniper({
-          repo: 'ines/spacy-io-binder'
-      });
-</script>
-
-</div>
-
 .center.width-50[![](img/juniper.png)]
+
+What is better than documentation? Documentation with interactive
+examples you can run right there!
+
+[Juniper demo](./juniper.html)
+
+https://spacy.io/usage/linguistic-features#pos-tagging
 
 ---
 
