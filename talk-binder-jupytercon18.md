@@ -15,7 +15,7 @@ class: middle, center, title-slide
 
 ???
 
-Earliest libraries were archives of clay tablets. Appeared in Mesopotamia about 2600BC. Making clay tablets was hard work, as you could imagine. Sharing and recording information is something humans have been doing for a very long time.
+Earliest libraries were archives of clay tablets. Appeared in Mesopotamia about 2600BC. Making clay tablets was hard work, as you could imagine. Recording information is something humans have been doing for a very long time. It is a valuable thing to do! Information is power.
 
 ---
 
@@ -25,7 +25,9 @@ Earliest libraries were archives of clay tablets. Appeared in Mesopotamia about 
 
 ???
 
-Things have changed a bit since then. We invented paper and the printing press. Spreading information via books and documents has become easy! We can do this at scale!
+Things have changed a bit since then. We invented paper and the printing press.
+At first access was restricted, you had to pay or prove you were a real scholar to get access. The ideas of the modern public library only started around 1850 or so.
+Now spreading information via books and documents has become easy! We can do this at scale!
 
 ---
 
@@ -41,22 +43,27 @@ Modern libraries are modern!
 
 # Libraries?
 
-.center.width-80[![](img/higgs-discovery.png)]
+.center.width-100[![](img/AI-reproducibility-library.png)]
 
 ???
 
-But you hardly ever go there anymore, these days a large part of their work
-is to broker access to digital information.
+But you hardly ever go there anymore, these days a large part of the work of a library is to broker access to digital information and to curate that information.
 
 ---
 
-# Information is now digital
+# Going beyond text
 
-<!--
-<img src="img/British_Museum_Reading_Room_Panorama_Feb_2006.jpg"
-  style="width: 120%; margin-left: -10%;" />
+.center.width-90[![](img/visual-question-answering.png)]
 
-.footnote[By <a href="//commons.wikimedia.org/wiki/User:Diliff" title="User:Diliff">Diliff</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="https://creativecommons.org/licenses/by/2.5" title="Creative Commons Attribution 2.5">CC BY 2.5</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=564849">Link</a>] -->
+---
+
+# Going beyond text
+
+.center.width-90[![](img/visual-question-answering-code.png)]
+
+---
+
+# Information isn't just text
 
 .larger[An article about computational science in a scientific publication is not the scholarship itself, it is merely advertising of the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures.]
 
@@ -69,7 +76,7 @@ Needs a picture. Illustrate point that information is now in computers and code,
 
 ---
 
-<blank>
+blank
 
 ???
 
@@ -91,25 +98,12 @@ class: middle, center
 
 ---
 
-# The Wild West Model
-
-Anything goes, all the modern tools, all the time.
-
-You have discussions like:
-
-**A:** I tried to run your script to generate the charts of our monthly sales numbers. It complains about not finding the Shedazzle shell??
-
-**B:** Ah yeah, Shedazzle is the latest in AI powered shell, everyone is using it now, you should also change. bash really hurts your productivity.
-
-**A:** Ah ok, so ... uhm I guess I'll try installing Shedazzle then ...
-
-**B:** Make sure to install the latest beta, current release is a bit flakey.
-
----
-# The Corporate IT Lockdown Model
+# The IT Department Approach
 
 Your IT department tightly controls what can be installed, there are
 approved tools that you shall use.
+
+Conversations go something like:
 
 **A:** Could we upgrade our scikit-learn version? They fixed several bugs that we have been working around for the last 6 months.
 
@@ -123,7 +117,27 @@ approved tools that you shall use.
 
 ---
 
-# What do we need for practical code sharing?
+# The Wild West Approach
+
+Anything goes, all the modern tools, all the time.
+
+You have discussions like:
+
+**A:** I tried to run your script to generate the charts of our monthly sales numbers. It complains about not finding the Shedazzle shell??
+
+**B:** Ah yeah, Shedazzle is the latest in AI powered productivity shell, everyone is using it now, you should also change. Bash really hurts your productivity.
+
+**A:** Ah ok, so ... uhm I guess I'll try installing Shedazzle then ...
+
+**B:** Make sure to install the latest beta, the current release is a bit flakey.
+
+**A:** Ok ... all I wanted to do is make a few charts ...
+
+---
+
+# Practical code sharing
+
+What do we need to make this practical?
 
 * The computational tools to solve a problem
 * A way to pack it all so others can use it
