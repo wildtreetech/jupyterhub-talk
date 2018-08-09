@@ -107,8 +107,8 @@ a:hover {
 
 strong {
     color: #d11a01;
-    font-style: normal;
-    font-weight: normal;
+    //font-style: normal;
+    //font-weight: normal;
 }
 
 ul > li, ol > li {
