@@ -51,28 +51,78 @@ But you hardly ever go there anymore, these days a large part of the work of a l
 
 ---
 
-# Going beyond text
+# Is Paper Obsolete?
+
+<video autoplay="autoplay" loop="loop" muted="muted"
+      playsinline="playsinline"
+      poster="img/SciencePaperFlames-New.jpg"
+      style="width:100%; height:100%"
+      webkit-playsinline="webkit-playsinline">
+  <source src="img/SciencePaperFlames-New.mp4" />
+</video>
+
+.footnote[https://www.theatlantic.com/science/archive/2018/04/the-scientific-paper-is-obsolete/556676/]
+
+---
+
+# Newton's Third Law
+
+.larger[
+> The third law states that all forces between two objects exist in equal magnitude and opposite direction: if one object A exerts a force $F_A$ on a second object B, then B simultaneously exerts a force $F_B$ on A, and the two forces are equal in magnitude and opposite in direction.
+]
+
+or
+
+---
+
+# Newton's Third Law
+
+.middle.larger[
+$$
+F_A = -F_B
+$$
+]
+
+.footnote[From https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion, August 2018]
+
+???
+
+Today experiments can't be described on a static piece of paper anymore. It is like using text to describe Newton's laws instead of using equations. Text takes a lot more space and is less precise than using maths. Today's experiments involve software which is essential to understanding the work that happened. We need to communicate more than just text.
+
+We need a new medium.
+
+paper == static
+
+---
+
+# Going beyond paper
 
 .center.width-90[![](img/visual-question-answering.png)]
 
+???
+
+With just the static paper it isn't actually well defined what they did. This
+means that we can't reproduce their work because we don't actually know
+what it is they did.
+
 ---
 
-# Going beyond text
+# Going beyond paper
 
 .center.width-90[![](img/visual-question-answering-code.png)]
 
----
-
-# Information isn't just text
-
-.larger[An article about computational science in a scientific publication is not the scholarship itself, it is merely advertising of the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures.]
-
--- _Buckheit and Donoho
-(paraphrasing John Claerbout),
-WaveLab and Reproducible Research, 1995_
-
 ???
-Needs a picture. Illustrate point that information is now in computers and code, not paper or PDF anymore.
+
+We need the code and the environment in which that code was run in order
+to have a full definition of what it is they did. Now we can start
+discussing about reproducing their work.
+
+---
+class: middle, center
+
+# Let's do it
+
+<a href="https://mybinder.org/v2/gh/betatim/tbd-nets/binder?filepath=visualize-output.ipynb" class="center width-50"><img src="https://mybinder.org/badge.svg" alt="Binder"></a>
 
 ---
 
@@ -86,7 +136,8 @@ This means that producing information is basically free now, but successfully co
 
 class: middle, center
 
-# Today: Getting other people's code to run
+# Today's Talk:
+# Running other people's code
 
 ---
 
@@ -103,15 +154,15 @@ class: middle, center
 Your IT department tightly controls what can be installed, there are
 approved tools that you shall use.
 
+.center.width-100[![](img/jose-fontano-246362-unsplash.jpg)]
+
+???
+
 Conversations go something like:
 
 **A:** Could we upgrade our scikit-learn version? They fixed several bugs that we have been working around for the last 6 months.
 
-**B:** Any new versions need to be audited first. Let me CC **C** from audits.
-
-**C:** Correct, all new code needs to be audited. We have a monthly meeting to prioritise the audit backlog.
-
-**D:** The Audit department needs a bigger headcount if we are meant to do more audits.
+**B:** Any new versions need to be audited first.
 
 **A:** Ok, well, I guess we keep working around the issues then ...
 
@@ -119,7 +170,11 @@ Conversations go something like:
 
 # The Wild West Approach
 
-Anything goes, all the modern tools, all the time.
+Anything goes, all the modern tools, all the time. This is the frontier!
+
+.center.width-100[![](img/jasper-van-der-meij-97274-unsplash.jpg)]
+
+???
 
 You have discussions like:
 
@@ -135,54 +190,39 @@ You have discussions like:
 
 ---
 
-# Practical code sharing
+# The Kitchen Sink Approach
 
-What do we need to make this practical?
+.center.width-80[![](img/kitchen-sink.jpg)]
 
-* The computational tools to solve a problem
-* A way to pack it all so others can use it
-* A way to communicate and share our work
-* A way to only depend on tools everyone has (browsers!)
-* A way to do all of this relatively easily and accessibly
+???
 
----
+Package up everything together with your code. Libraries, dependencies,
+everything. Makes a huge bundle.
 
-# Open-source languages
-
-.gallery[
-![](img/Python-logo-notext.svg)
-![](img/Rlogo.svg)
-
-![](img/julia-logo.svg)
-![](img/cpp_logo.svg)
-]
+Technically speaking this is sending a VM or a container image.
 
 ---
 
-# Web native editors
+# The Ikea Manual Approach
 
-.gallery[
-![](img/jupyter-logo.svg)
+.center.width-90[![](img/billy-ikea.jpg)]
 
-![](img/rstudio-logo.png)
-]
+???
 
-... and many more.
+Deliver the instructions for assembling the kitchen sink approach.
 
----
-
-# Sharing your work
-
-.gallery[
-![](img/github-logo.svg)
-![](img/gitlab-logo.svg)
-
-![](img/bitbucket-logo.png)
-]
+Technically speaking this is like sending a Dockerfile instead of
+the built container image.
 
 ---
 
-# Specifying dependencies
+class: middle, center
+
+# Idea: Dockerfiles for everything.
+
+---
+
+# Do we have to use containers?
 
 .center.width-20[![](img/docker-logo.png)]
 
@@ -199,8 +239,7 @@ level of abstraction.
 
 # Easy?
 
-.larger[All the technical pieces exist but they require significant expertise to operate
-and combine.]
+.larger[Crafting a good Dockerfile requires significant expertise.]
 
 --
 
@@ -208,9 +247,11 @@ and combine.]
 
 ---
 
-# Just use our framework!
+# How did that paper do it?
 
-.center.width-100[![](img/jakob-owens-373320-unsplash.jpg)]
+.center.width-100[![](img/tbd-nets-files.png)]
+
+Nothing suspicious to see ...
 
 ---
 
@@ -220,19 +261,47 @@ class: middle, center
 
 ---
 
-# Creating Containers
+class: middle, center
 
-Writing a `Dockerfile` is hard, and tedious. Not my definition of fun.
+# repo2docker builds and runs containers
+---
 
-Most programming languages already have a way to specify dependencies.
+# repo2docker builds and runs containers
 
-Can't we automate creating a Docker image?
+Mimics what a human would do:
+
+```
+$ git clone https://github.com/davidmascharka/tbd-nets
+```
+--
+
+Analyse repository:
+
+.center.width-100[![](img/analyse-repo.png)]
 
 ---
 
-# repo2docker builds and runs containers from a directory
+# repo2docker builds and runs containers
 
-.center.width-100[![](img/repo2docker-docs2.png)]
+Mimics what a human would do:
+
+```
+$ git clone https://github.com/davidmascharka/tbd-nets
+```
+
+Analyse repository and install dependencies:
+
+```
+$ conda install -f environment.yml
+```
+
+--
+
+Start Jupyter notebook:
+
+```
+$ jupyter notebook
+```
 
 ---
 
@@ -243,18 +312,24 @@ This means that you can keep working the way you have always been working,
 and benefit from `repo2docker` from day one.
 
 Supported configuration files:
+.larger[
+.left-column[
 * `requirements.txt`
 * `environment.yml`
 * `apt.txt`
 * `REQUIRE`
+]
+.right-column[
 * `install.R`
 * `runtime.txt`
 * `postBuild`
 * `Dockerfile`
+]
+]
 
 ---
 
-.center.width-100.border[![](img/pytudes-demo.gif)]
+Video of using repo2docker locally.
 
 ---
 
@@ -266,7 +341,7 @@ Hi Tim,
 thanks for helping out on our project. To run things
 you need to install Docker, repo2docker and then run
 
-repo2docker https://github.com/norvig/pytudes/
+repo2docker https://github.com/davidmascharka/tbd-nets
 
 It produces a lot of output but at the end there is
 a URL that you need to paste into your browser. That
@@ -351,7 +426,7 @@ Bokeh app https://github.com/binder-examples/bokeh
 
 ---
 
-# Part Of The Community!
+# Be a Part of the Community!
 
 .center.border.width-100[![](img/jhub-contributors.png)]
 
@@ -370,7 +445,30 @@ In the last 80 days we have had users from all but eight countries on Earth. Cub
 
 ---
 
-# A Selection of users
+# Showing Off 🎉
+
+About 1.2 million page views since 1st January 2018.
+
+Daily launches:
+
+.center.border.width-100[![](img/all-users-2018.png)]
+
+Daily launches without [jupyter.org/try](https://jupyter.org/try):
+
+.center.border.width-100[![](img/usage-2018.png)]
+
+You can't read these, that is fine, there are about five grains of salt you'd need to apply anyway.
+
+---
+
+
+# A Selection of Users
+
+.center.width-90[![](img/mybinder-users.png)]
+
+Most of the interesting users are in the "long tail", so takes a lot of effort to find.
+
+???
 
 https://github.com/wichit2s/programmingfundamentals/ - University course in Thailand
 
@@ -382,6 +480,11 @@ https://github.com/Coleridge-Initiative - http://coleridgeinitiative.org/
 
 https://github.com/fboylu/binder - Microsoft internal training event, you've made it when MS asks for your help right?
 
+https://github.com/fonnesbeck/cqs_machine_learning
+
+https://github.com/story645/EAS213
+For the CUNY-CREST summer high school research experience (HIRES), 26 NYC students spent about a week learning Python for earth and atmospheric science."
+HIRES is the High School Initiative in Remote Sensing of the Earth Systems Engineering and Sciences
 ---
 
 # Back to libraries
@@ -394,13 +497,15 @@ First libraries archived clay tablets, then books, followed by managing access t
 .larger[
 ...a BinderHub in every library.
 ]
+
+.center.width-60[![](img/binder-library.png)]
 ---
 
-# BinderHub is a step forward in making computational work easier to reproduce
+# Binder is Pretty Cool
 
 Combines the stability and scalability of JupyterHub with ondemand image building.
 
-Anyone who wants to can now make their computational project "one click" reproducible: [![Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/AllenDowney/ThinkDSP/master?filepath=code/cacophony.ipynb)
+Anyone who wants to can now make their computational project "one click" usable: [![Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/AllenDowney/ThinkDSP/master?filepath=code%2Fcacophony.ipynb)
 
 Based on state of the art cloud orchestration tools.
 
