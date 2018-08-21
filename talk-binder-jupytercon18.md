@@ -128,6 +128,8 @@ class: middle, center
 
 blank
 
+https://distill.pub/2018/editorial-update/#figure-spectrum we are seeing the trend to including notebooks already
+
 ???
 
 This means that producing information is basically free now, but successfully consuming it has never been harder. It is very likely that computer programs played a role in generating that information, so you need
@@ -441,7 +443,11 @@ Bokeh app https://github.com/binder-examples/bokeh
 
 .center.width-90.border[![](img/analytics-users-80days.png)]
 
-In the last 80 days we have had users from all but eight countries on Earth. Cuba, North Korea, Chad, Central African Republic, Western Sahara, Mali, Guinea-Bissau, Eritrea. (Is Spitzbergen a country?)
+In the last 80 days we have had users from almost everywhere on the planet.
+
+???
+
+Some countries we are missing: Cuba, North Korea, Chad, Central African Republic, Western Sahara, Mali, Guinea-Bissau, Eritrea. (Is Spitzbergen a country?)
 
 ---
 
