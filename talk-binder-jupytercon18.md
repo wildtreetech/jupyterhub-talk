@@ -531,6 +531,13 @@ Let's put a BinderHub in every library.
 
 ---
 
+class: middle, center
+
+# One more thing ...
+# http://bit.ly/juco18
+
+---
+
 class: bottom, center
 
 # Fin.
