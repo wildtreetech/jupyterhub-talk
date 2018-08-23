@@ -51,20 +51,6 @@ But you hardly ever go there anymore, these days a large part of the work of a l
 
 ---
 
-# Is Paper Obsolete?
-
-<video autoplay="autoplay" loop="loop" muted="muted"
-      playsinline="playsinline"
-      poster="img/SciencePaperFlames-New.jpg"
-      style="width:100%; height:100%"
-      webkit-playsinline="webkit-playsinline">
-  <source src="img/SciencePaperFlames-New.mp4" />
-</video>
-
-.footnote[https://www.theatlantic.com/science/archive/2018/04/the-scientific-paper-is-obsolete/556676/]
-
----
-
 # Newton's Third Law
 
 .larger[
@@ -92,6 +78,21 @@ Today experiments can't be described on a static piece of paper anymore. It is l
 We need a new medium.
 
 paper == static
+
+
+---
+
+# Is Paper Obsolete?
+
+<video autoplay="autoplay" loop="loop" muted="muted"
+      playsinline="playsinline"
+      poster="img/SciencePaperFlames-New.jpg"
+      style="width:100%; height:100%"
+      webkit-playsinline="webkit-playsinline">
+  <source src="img/SciencePaperFlames-New.mp4" />
+</video>
+
+.footnote[https://www.theatlantic.com/science/archive/2018/04/the-scientific-paper-is-obsolete/556676/]
 
 ---
 
@@ -126,13 +127,13 @@ class: middle, center
 
 ---
 
-blank
+class: middle, center
 
-https://distill.pub/2018/editorial-update/#figure-spectrum we are seeing the trend to including notebooks already
+# That was Binder.
 
 ???
 
-This means that producing information is basically free now, but successfully consuming it has never been harder. It is very likely that computer programs played a role in generating that information, so you need
+This means that producing information is basically free now, but successfully consuming it has never been harder. It is very likely that computer programs played a role in generating that information, so you need to have access to them as well as the text itself
 
 ---
 
@@ -194,7 +195,9 @@ You have discussions like:
 
 # The Kitchen Sink Approach
 
-.center.width-80[![](img/kitchen-sink.jpg)]
+.center.width-80[![](img/Goliat-float-on-10.jpg)]
+
+.footnote[Credit: ENI Norge]
 
 ???
 
@@ -224,26 +227,26 @@ class: middle, center
 
 ---
 
-# Do we have to use containers?
+# Easy?
 
-.center.width-20[![](img/docker-logo.png)]
+.larger[Crafting a good Dockerfile requires significant expertise.]
 
-But my language has a package manager!
+These are the six lines you need to install one package:
 
-* language specific tools work well if you only use one language
-* some tools are easier to install via the operating system's package manager
-* real world projects use several languages
-
-To specify the complete computational environment a container is the right
-level of abstraction.
+```
+RUN apt-get update && \
+    apt-get install --yes --no-install-recommends \
+*       less && \
+    apt-get purge && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+```
 
 ---
 
 # Easy?
 
 .larger[Crafting a good Dockerfile requires significant expertise.]
-
---
 
 .center.width-60[![](img/Library_of_Ashurbanipal_The_Flood_Tablet.jpg)]
 
@@ -320,6 +323,7 @@ Supported configuration files:
 * `environment.yml`
 * `apt.txt`
 * `REQUIRE`
+* and more!
 ]
 .right-column[
 * `install.R`
@@ -328,10 +332,6 @@ Supported configuration files:
 * `Dockerfile`
 ]
 ]
-
----
-
-Video of using repo2docker locally.
 
 ---
 
@@ -364,13 +364,23 @@ class: middle, center
 
 # Of course!
 
-<a href="https://mybinder.org/v2/gh/norvig/pytudes/master" class="center width-50"><img src="https://mybinder.org/badge.svg" alt="Binder"></a>
+<a href="https://mybinder.org/v2/gh/betatim/tbd-nets/binder?filepath=visualize-output.ipynb" class="center width-50"><img src="https://mybinder.org/badge.svg" alt="Binder"></a>
 
 ---
 
-class: middle, center
+.center.width-100[![](img/binderhub-screen.png)]
 
-# Binding it all together
+
+???
+
+Combine `repo2docker` with JupyterHub to build images for any git repository
+ondemand.
+
+We call it BinderHub.
+
+---
+
+.center.width-100[![](img/binder-splash.png)]
 
 ---
 
@@ -393,41 +403,36 @@ repo2docker
 
 ---
 
-# JupyterHub with ondemand containers: BinderHub!
-
-.center.width-100[![](img/mybinder-org.png)]
-
-
-???
-
-Combine `repo2docker` with JupyterHub to build images for any git repository
-ondemand.
-
-We call it BinderHub.
-
-
----
-
 # https://mybinder.org
 
 A public BinderHub operated by the Binder team.
 
 .center.width-100[![](img/mybinder-org.png)]
 
-<a class="github-fork-ribbon" href="https://conferences.oreilly.com/jupyter/jup-ny/public/schedule/detail/68437" data-ribbon="Yuvi's talk (now)" title="Yuvi's talk">Yuvi's talk (now)</a>
+<a class="github-fork-ribbon" href="https://conferences.oreilly.com/jupyter/jup-ny/public/schedule/detail/68437" data-ribbon="Yuvi's talk (11.55am)" title="Yuvi's talk">Yuvi's talk (11.55am)</a>
 
 ---
 
 # Not just Jupyter Frontends
 
-https://github.com/binder-examples/r
+.center.border.width-100[![](img/rstudio-screen.png)]
 
-.center.border.width-100[![](img/rstudio-demo.gif)]
-
-Bokeh app https://github.com/binder-examples/bokeh
+Also support RShiny, Bokeh apps, appmode, ...
 
 ---
 
+# Not just Jupyter Frontends
+
+.center.border.width-100[![](img/spacy-docs.png)]
+
+Also support RShiny, Bokeh apps, appmode, ...
+
+---
+class: middle, center
+
+# The People and The Future
+
+---
 # Be a Part of the Community!
 
 .center.border.width-100[![](img/jhub-contributors.png)]
@@ -436,6 +441,12 @@ Bokeh app https://github.com/binder-examples/bokeh
 * Join us at https://github.com/jupyterhub/binder
 * Chat with us https://gitter.im/jupyterhub/binder
 * Become part of the community!
+
+---
+
+class: middle, center
+
+# 362
 
 ---
 
@@ -453,26 +464,21 @@ Some countries we are missing: Cuba, North Korea, Chad, Central African Republic
 
 # Showing Off 🎉
 
-About 1.2 million page views since 1st January 2018.
+About 1.2 million Binders launched since 1st January 2018.
+
+Over 50000 Binders are launched every week.
 
 Daily launches:
 
 .center.border.width-100[![](img/all-users-2018.png)]
 
-Daily launches without [jupyter.org/try](https://jupyter.org/try):
-
-.center.border.width-100[![](img/usage-2018.png)]
-
-You can't read these, that is fine, there are about five grains of salt you'd need to apply anyway.
-
 ---
-
 
 # A Selection of Users
 
 .center.width-90[![](img/mybinder-users.png)]
 
-Most of the interesting users are in the "long tail", so takes a lot of effort to find.
+Most of the interesting users are in the "long tail", this makes it hard to put them on a slide.
 
 ???
 
@@ -491,124 +497,37 @@ https://github.com/fonnesbeck/cqs_machine_learning
 https://github.com/story645/EAS213
 For the CUNY-CREST summer high school research experience (HIRES), 26 NYC students spent about a week learning Python for earth and atmospheric science."
 HIRES is the High School Initiative in Remote Sensing of the Earth Systems Engineering and Sciences
+
 ---
 
-# Back to libraries
+# Going beyond paper!
+
+<video autoplay="autoplay" loop="loop" muted="muted"
+      playsinline="playsinline"
+      poster="img/SciencePaperFlames-New.jpg"
+      style="width:100%; height:100%"
+      webkit-playsinline="webkit-playsinline">
+  <source src="img/SciencePaperFlames-New.mp4" />
+</video>
+
+.footnote[https://www.theatlantic.com/science/archive/2018/04/the-scientific-paper-is-obsolete/556676/]
+
+---
+
+# Beyond clay tablets
+
+To communicate the ideas of today we need to go beyond "paper".
+
+With Binder the sharing of computational work has left the clay tablet era.
 
 Libraries have always been about curating and spreading knowledge!
 
-First libraries archived clay tablets, then books, followed by managing access to PDFs, next ...
-
 --
 .larger[
-...a BinderHub in every library.
+Let's put a BinderHub in every library.
 ]
 
-.center.width-60[![](img/binder-library.png)]
----
-
-# Binder is Pretty Cool
-
-Combines the stability and scalability of JupyterHub with ondemand image building.
-
-Anyone who wants to can now make their computational project "one click" usable: [![Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/AllenDowney/ThinkDSP/master?filepath=code%2Fcacophony.ipynb)
-
-Based on state of the art cloud orchestration tools.
-
-Can be deployed by anyone: https://binderhub.readthedocs.io/en/latest/
-
----
-
----
-
-class: middle, center
-
-# Encore
-
----
-
-# Not Just Jupyter
-
-BinderHub also works with RStudio or Shiny.
-
-https://github.com/binder-examples/r
-
-You can also use a tool like OpenRefine
-
-https://github.com/betatim/openrefineder/
-
----
-
-# Challenge
-
-Can you (this room) move the needle on the number of live binders?
-
-.larger[
-Visit http://bit.ly/2t9Bjql to launch your first binder.
-]
-
-https://grafana.mybinder.org/d-solo/fZWsQmnmz/pod-activity?refresh=30s&orgId=1&panelId=3
-
----
-
-# Slides about Binder using Binder
-
-You can embed code in your HTML, and with a bit of JavaScript magic
-make it executable, powered by a BinderHub.
-
-<pre data-executable="true" data-language="python">%matplotlib inline
-import numpy as np
-import matplotlib.pyplot as plt
-x = np.linspace(0,10)
-plt.plot(x, np.sin(x))
-plt.plot(x, np.cos(x))
-</pre>
-
----
-
-# Interactive documentation
-
-.center.width-50[![](img/juniper.png)]
-
-What is better than documentation? Documentation with interactive
-examples you can run right there!
-
-[Juniper demo](./juniper.html)
-
-https://spacy.io/usage/linguistic-features#pos-tagging
-
----
-
-# GUI like things
-
-* https://github.com/binder-examples/appmode
-* https://github.com/SimonBiggs/scriptedforms/blob/master/README.md
-
----
-
-# Real GUIs - X servers!
-
-* https://mybinder.org/v2/gh/betatim/nbnovnc/add-xeyes
-
-.center.width-100.border[![](img/xeyes-demo.gif)]
-
-
----
-
-# Wild Tree Tech
-
-.center.width-10[![](assets/logo_wtt.png)]
-
-Tim is a doctor of experimental physics, worked at CERN and EPFL,
-contributor to the PyData ecosystem.
-
-Wild Tree Tech builds bespoke solutions for clients all around the world,
-from startups to UN organisations.
-
-* digital products that leverage machine-learning and AI,
-* small and large JupyterHub deployments.
-
-Visit [http://www.wildtreetech.com](www.wildtreetech.com).
+.center.width-50[![](img/binder-library.png)]
 
 ---
 
